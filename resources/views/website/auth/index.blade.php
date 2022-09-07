@@ -20,7 +20,7 @@
                         <div class="card-body mb-3  ">
                             <h1>Login Form</h1>
                             <hr>
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('login')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label class="col-md-3">Email Address</label>
@@ -49,7 +49,7 @@
                         <div class="card-body mb-3  ">
                             <h1>Registration Form</h1>
                             <hr>
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('register')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label class="col-md-3">Full Name</label>
@@ -67,6 +67,12 @@
                                     <label class="col-md-3">Password</label>
                                     <div class="col-md-9">
                                         <input class="form-control" type="password" name="password" placeholder="Password" id="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Confirm Password</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="password" name="password_confirmation" placeholder="Password" id="">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
