@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card card-body">
+                    <div class="card card-body shadow rounded-0">
                         <h4 class="text-uppercase fw-bold">SSMS B7</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Ab, ad assumenda enim fugiat labore molestiae. Alias amet
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-body">
+                    <div class="card card-body shadow rounded-0">
                         <h4 class="text-uppercase fw-bold">Popular Link</h4>
                         <hr>
                         <ul class="nav navbar-nav">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-body">
+                    <div class="card card-body shadow rounded-0">
                         <h4 class="text-uppercase fw-bold">Contact Us</h4>
                         <hr>
                         <address>

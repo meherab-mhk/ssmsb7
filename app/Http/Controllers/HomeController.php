@@ -26,4 +26,8 @@ class HomeController extends Controller
     {
         return view('website.auth.index');
     }
+    public function details()
+    {
+        return view('website.courses.course-details');
+    }
 }

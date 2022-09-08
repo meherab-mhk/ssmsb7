@@ -16,7 +16,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-body  h-100 shadow">
+                    <div class="card card-body  h-100 shadow rounded-0">
                         <h1 class="text-center">Send Us a Message!</h1>
                         <hr>
                         <form action="" method="POST">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card card-body h-100 shadow">
+                    <div class="card card-body h-100 shadow rounded-0">
                         <h1 class="text-center">Contact Info</h1>
                         <hr>
                         <address>
@@ -68,7 +68,7 @@
             </div>
             <div class="row pt-5">
                 <div class="col-md-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14607.610760834354!2d90.40275355!3d23.750849249999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1662529742012!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14607.610760834354!2d90.40275355!3d23.750849249999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1662529742012!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="shadow"></iframe>
                 </div>
             </div>
         </div>

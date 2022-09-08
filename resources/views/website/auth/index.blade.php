@@ -16,8 +16,8 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card border-0 shadow h-100">
-                        <div class="card-body mb-3  ">
+                    <div class="card rounded-0 shadow h-100">
+                        <div class="card-body  bg-secondary text-white">
                             <h1>Login Form</h1>
                             <hr>
                             <form action="{{route('login')}}" method="post" enctype="multipart/form-data">
@@ -37,7 +37,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3"></label>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-success" name="loginBtn">Login</button>
+                                        <button type="submit" class="btn btn-light" name="loginBtn">Login</button>
                                     </div>
                                 </div>
                             </form>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card border-0 shadow h-100">
-                        <div class="card-body mb-3  ">
+                    <div class="card rounded-0 shadow h-100">
+                        <div class="card-body">
                             <h1>Registration Form</h1>
                             <hr>
                             <form action="{{route('register')}}" method="post" enctype="multipart/form-data">
@@ -84,7 +84,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3"></label>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-success" name="registrationBtn">Registration</button>
+                                        <button type="submit" class="btn btn-secondary" name="registrationBtn">Registration</button>
                                     </div>
                                 </div>
 
