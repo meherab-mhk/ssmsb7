@@ -113,8 +113,8 @@
                             <span>Teacher Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="layouts-horizontal.html">Add Teacher</a></li>
-                            <li><a href="layouts-light-sidebar.html">manage Teacher</a></li>
+                            <li><a href="{{route('teacher.add')}}">Add Teacher</a></li>
+                            <li><a href="{{route('teacher.manage')}}">manage Teacher</a></li>
                         </ul>
                     </li>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,4 +28,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/teacher/add', [TeacherController::class, 'index'])->name('teacher.add');
+    Route::get('/teacher/manage', [TeacherController::class, 'manage'])->name('teacher.manage');
+    Route::get('/teacher/new', [TeacherController::class, 'create'])->name('teacher.new');
+
 });
