@@ -24,7 +24,7 @@ class Teacher extends Model
         self::$teacher = new Teacher();
         self::$teacher->name = $request->name;
         self::$teacher->email = $request->email;
-        self::$teacher->password = sha1($request->password);
+        self::$teacher->password = bcrypt($request->password);
         self::$teacher->mobile = $request->mobile;
         self::$teacher->image = self::getImage($request);
         self::$teacher->save();
@@ -46,7 +46,7 @@ class Teacher extends Model
         }
         self::$teacher->name = $request->name;
         self::$teacher->email = $request->email;
-        self::$teacher->password = sha1($request->password);
+        self::$teacher->password = bcrypt($request->password);
         self::$teacher->mobile = $request->mobile;
         self::$teacher->image = self::$imageUrl;
         self::$teacher->save();

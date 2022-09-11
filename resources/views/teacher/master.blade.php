@@ -79,7 +79,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
                         <form action="{{route('logout')}}" method="POST" id="logoutForm">
-                        @csrf
+                            @csrf
                         </form>
                     </div>
                 </div>
@@ -110,11 +110,11 @@
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-layout"></i>
-                            <span>Teacher Module</span>
+                            <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{route('teacher.add')}}">Add Teacher</a></li>
-                            <li><a href="{{route('teacher.manage')}}">Manage Teacher</a></li>
+                            <li><a href="{{route('teacher.add')}}">Add Course</a></li>
+                            <li><a href="{{route('teacher.manage')}}">Manage Course</a></li>
                         </ul>
                     </li>
 
@@ -123,10 +123,10 @@
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-store"></i>
-                            <span>Course Module</span>
+                            <span>Enroll Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.html">Manage Courses</a></li>
+                            <li><a href="ecommerce-products.html">Manage Enroll</a></li>
                         </ul>
                     </li>
 
@@ -137,27 +137,6 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="crypto-wallet.html">Manage Student</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-envelope"></i>
-                            <span>Enroll Module</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html">Manage Enroll</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-receipt"></i>
-                            <span>User Module</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="invoices-list.html">Add User</a></li>
-                            <li><a href="invoices-detail.html">Manage User</a></li>
                         </ul>
                     </li>
 

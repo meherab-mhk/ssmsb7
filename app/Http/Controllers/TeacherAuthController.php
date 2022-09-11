@@ -19,16 +19,20 @@ class TeacherAuthController extends Controller
         {
             if(password_verify($request->password, $this->teacher->password))
             {
-                return 'success';
+                Session::put('teacher_id', $this->teacher->id);
+                Session::put('teacher_name', $this->teacher->name);
+
+                return redirect('/teacher/dashboard');
+
             }
             else
             {
-                return 'wrong password';
+                return redirect('/teacher/login')->with('message', 'Password is wrong');
             }
         }
         else
         {
-            return 'wrong email';
+            return redirect('/teacher/login')->with('message', 'Email address is wrong');
         }
     }
 }

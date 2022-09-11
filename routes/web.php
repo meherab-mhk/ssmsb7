@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
+use App\Http\Controllers\TeacherDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,9 @@ Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 Route::get('/login-register', [HomeController::class, 'auth'])->name('login-register');
 Route::get('/course-details', [HomeController::class, 'details'])->name('course-details');
 Route::get('/teacher/login', [TeacherAuthController::class, 'login'])->name('teacher.login');
-Route::post('/teacher/login', [TeacherAuthController::class, 'loginCheck'])->name('teacher.login');
+Route::post('/teacher/login', [TeacherAuthController::class, 'loginCheck'])->name('teacher.loginCheck');
+Route::get('/teacher/dashboard', [TeacherDashboardController::class, 'index'])->name('teacher.dashboard');
+
 
 Route::middleware([
     'auth:sanctum',

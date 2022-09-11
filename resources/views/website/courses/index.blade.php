@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/service2.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service1.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>App Development</h3>
                         <h5>Meherab Hossain</h5>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/service3.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service2.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>PHP with Laravel</h3>
                         <h5>Meherab Hossain</h5>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/slide.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service3.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>Responsive Web Design</h3>
                         <h5>Meherab Hossain</h5>
@@ -55,7 +55,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/service2.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service1.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>App Development</h3>
                         <h5>Meherab Hossain</h5>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/service3.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service2.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>PHP with Laravel</h3>
                         <h5>Meherab Hossain</h5>
@@ -81,7 +81,7 @@
             </div>
             <div class="col-md-4 mb-5">
                 <div class="card shadow rounded-0 border-0">
-                    <img src="{{asset('/')}}website/img/slide.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
+                    <img src="{{asset('/')}}website/img/service3.jpg" alt="" class="card-img-top rounded-0" style=" height: 200px">
                     <div class="card-body">
                         <h3>Responsive Web Design</h3>
                         <h5>Meherab Hossain</h5>
