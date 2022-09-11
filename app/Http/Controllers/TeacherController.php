@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TeacherController extends Controller
 {
     private $teacher;
-    public function index()
+    public function add()
     {
         return view('admin.teacher.index');
     }
@@ -23,9 +23,19 @@ class TeacherController extends Controller
         return redirect('teacher/add')->with('message' , 'Teacher add successfully');
 
     }
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $this->teacher = Teacher::find($id);
         return view('admin.teacher.edit', ['teacher'=>$this->teacher]);
+    }
+    public function update(Request $request,$id)
+    {
+        Teacher::updateTeacher($request, $id);
+        return redirect('teacher/manage')->with('message' , 'Teacher update successfully');
+    }
+    public function delete($id)
+    {
+        Teacher::deleteTeacher($id);
+        return redirect('teacher/manage')->with('message' , 'Teacher delete successfully');
     }
 }

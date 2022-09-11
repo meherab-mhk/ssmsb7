@@ -28,9 +28,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/teacher/add', [TeacherController::class, 'index'])->name('teacher.add');
+    Route::get('/teacher/add', [TeacherController::class, 'add'])->name('teacher.add');
     Route::get('/teacher/manage', [TeacherController::class, 'manage'])->name('teacher.manage');
     Route::post('/teacher/new', [TeacherController::class, 'create'])->name('teacher.new');
     Route::get('/teacher/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
+    Route::post('/teacher/update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
+    Route::get('/teacher/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
 
 });

@@ -1,4 +1,7 @@
 @extends('admin.home.master')
+
+
+
 @section('body')
     <!-- start page title -->
     <div class="row">

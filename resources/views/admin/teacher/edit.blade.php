@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Edit Teacher Form</h4>
                     <h3 class="text-center text-success">{{Session::get('message')? Session::get('message') : ''}}</h3>
-                    <form action="{{route('teacher.edit', ['id'=>$teacher->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('teacher.update', ['id'=>$teacher->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
                             <label for="" class="col-sm-3 col-form-label">Name</label>
@@ -23,12 +23,6 @@
                             <label for="horizontal-email-input" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                                 <input type="email" name="email" class="form-control" value="{{$teacher->email}}">
-                            </div>
-                        </div>
-                        <div class="form-group row mb-4">
-                            <label for="horizontal-password-input" class="col-sm-3 col-form-label">Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" name="password" class="form-control" value="{{$teacher->password}}">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
