@@ -2,13 +2,11 @@
 
 @section('body')
     <div class="row">
-
-
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-4">Add Teacher Form</h4>
-
+                <h3 class="text-center text-success">{{Session::get('message')? Session::get('message') : ''}}</h3>
                 <form action="{{route('teacher.new')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row mb-4">

@@ -2,6 +2,49 @@
 
 @section('body')
     <section>
-        <h1>This is manage</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Teacher List</h4>
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+
+                                    <thead>
+                                    <tr>
+                                        <th>Teacher Name</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <th>Mobile</th>
+                                        <th>Avatar</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($teacher as $data)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$data->name}}</td>
+                                        <td>{{$data->email}}</td>
+                                        <td>{{$data->mobile}}</td>
+                                        <td>
+                                            <img src="{{asset($data->image)}}" alt="" width="80" height="80" class="rounded-5">
+                                        </td>
+                                        <td>
+                                            <a href="{{route('teacher.edit', ['id'=>$data->id])}}" class="btn btn-sm btn-success">Edit</a>
+                                            <a href="" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
