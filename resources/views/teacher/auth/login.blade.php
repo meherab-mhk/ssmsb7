@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:08:04 GMT -->
 <head>
 
     <meta charset="utf-8" />
-    <title>Login | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Login | Teacher Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -24,7 +22,7 @@
 
 <body>
 <div class="home-btn d-none d-sm-block">
-    <a href="{{route('teacher.login')}}" class="text-dark"><i class="fas fa-home h2"></i></a>
+    <a href="{{route('home')}}" class="text-dark"><i class="fas fa-home h2"></i></a>
 </div>
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -36,7 +34,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-4">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Sign in to continue to Skote.</p>
+                                    <p>Sign in to continue to SSMSB.</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -55,10 +53,12 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <form class="form-horizontal" action="{{route('teacher.loginCheck')}}" method="POST">
+                            <h3 class="text-center text-danger">{{Session::get('message')? Session::get('message') : ''}}</h3>
+                            <form class="form-horizontal" action="{{route('teacher.login')}}" method="POST">
                                 @csrf
+
                                 <div class="form-group">
-                                    <label for="username">Email Address</label>
+                                    <label for="username">Email</label>
                                     <input type="email" name="email" class="form-control" id="username" placeholder="Enter username">
                                 </div>
 
@@ -129,9 +129,8 @@
 <script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
 
 <!-- App js -->
-<script src="assets/js/app.js"></script>
+<script src="{{asset('/')}}admin/assets/js/app.js"></script>
 </body>
 
 <!-- Mirrored from themesbrand.com/skote/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:08:04 GMT -->
 </html>
-

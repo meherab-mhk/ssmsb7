@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
+    <!-- Summernote css -->
+    <link href="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/favicon.ico">
 
@@ -78,7 +80,7 @@
                         <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
-                        <form action="{{route('logout')}}" method="POST" id="logoutForm">
+                        <form action="{{route('teacher.logout')}}" method="POST" id="logoutForm">
                             @csrf
                         </form>
                     </div>
@@ -113,8 +115,8 @@
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{route('teacher.add')}}">Add Course</a></li>
-                            <li><a href="{{route('teacher.manage')}}">Manage Course</a></li>
+                            <li><a href="{{route('course.add')}}">Add Course</a></li>
+                            <li><a href="{{route('course.manage')}}">Manage Course</a></li>
                         </ul>
                     </li>
 
@@ -320,16 +322,23 @@
 <div class="rightbar-overlay"></div>
 
 <!-- JAVASCRIPT -->
+
 <script src="{{asset('/')}}admin/assets/libs/jquery/jquery.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/metismenu/metisMenu.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/simplebar/simplebar.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
 
+
 <!-- apexcharts -->
 <script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
+
+<!-- Summernote js -->
+<script src="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.js"></script>
+<!-- init js -->
+<script src="{{asset('/')}}admin/assets/js/pages/form-editor.init.js"></script>
 
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
