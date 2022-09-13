@@ -126,7 +126,7 @@
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.html">Manage Courses</a></li>
+                            <li><a href="{{route('admin.manage-course')}}">Manage Courses</a></li>
                         </ul>
                     </li>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\AdminCourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,5 +55,9 @@ Route::middleware([
     Route::get('/teacher/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
     Route::post('/teacher/update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
     Route::get('/teacher/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
+
+    Route::get('/admin/manage-course', [AdminCourseController::class, 'manageCourse'])->name('admin.manage-course');
+    Route::get('/admin/course-detail/{id}', [AdminCourseController::class, 'courseDetail'])->name('admin.course-detail');
+    Route::get('/admin/update-course-status/{id}', [AdminCourseController::class, 'updateStatus'])->name('admin.update-course-status');
 
 });

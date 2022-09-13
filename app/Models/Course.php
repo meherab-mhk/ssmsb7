@@ -10,7 +10,7 @@ class Course extends Model
 {
     use HasFactory;
     private static $course, $image, $imageName, $directory, $extension, $imageUrl;
-
+    private static $message;
     public static function getImageUrl($request)
     {
         self::$image = $request->file('image');
@@ -65,5 +65,25 @@ class Course extends Model
             unlink(self::$course->image);
         }
         self::$course->delete();
+    }
+    public static function updateCourseStatus($id)
+    {
+        self::$course = Course::find($id);
+        if(self::$course->status == 0 )
+        {
+            self::$course->status = 1;
+            self::$message = 'Course status info published successfully';
+        }
+        else
+        {
+            self::$course->status = 0;
+            self::$message = 'Course status info unpublished successfully';
+        }
+        self::$course->save();
+        return self::$message;
+    }
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
     }
 }
