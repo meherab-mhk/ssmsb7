@@ -1,6 +1,11 @@
 @extends('admin.home.master')
+@section('title')
+    Admin| Dashboard
+@endsection
 
-
+@section('profileName')
+    Admin
+@endsection
 
 @section('body')
     <!-- start page title -->

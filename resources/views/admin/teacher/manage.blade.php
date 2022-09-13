@@ -1,5 +1,9 @@
 @extends('admin.home.master')
 
+@section('title')
+    Admin| Manage Teacher
+@endsection
+
 @section('body')
     <section>
         <div class="container">

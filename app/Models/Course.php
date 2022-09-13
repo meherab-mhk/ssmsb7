@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Http\Middleware\RedirectIfAuthenticated;
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Session;
@@ -9,8 +11,10 @@ use Session;
 class Course extends Model
 {
     use HasFactory;
+    
+    
     private static $course, $image, $imageName, $directory, $extension, $imageUrl;
-    private static $message;
+    private static $message, $publishCourse, $id;
     public static function getImageUrl($request)
     {
         self::$image = $request->file('image');
@@ -86,4 +90,23 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+    public static function offerCourseUpdate($request)
+    {
+
+        
+        self::$course = Course::find($request->id);
+        self::$image = $request->file('banner_image');
+        self::$extension = self::$image->getClientOriginalExtension();
+        self::$imageName = 'ssmsb7_'.time().'.'.self::$extension;
+        self::$directory = 'website/img/course_offer/';
+        self::$image->move(self::$directory, self::$imageName);
+        self::$imageUrl = self::$directory.self::$imageName;
+
+        self::$course->offer_fee = $request->offer_fee;
+        self::$course->banner_image = self::$imageUrl;
+        self::$course->save();
+
+
+    }
+
 }

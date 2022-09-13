@@ -59,5 +59,7 @@ Route::middleware([
     Route::get('/admin/manage-course', [AdminCourseController::class, 'manageCourse'])->name('admin.manage-course');
     Route::get('/admin/course-detail/{id}', [AdminCourseController::class, 'courseDetail'])->name('admin.course-detail');
     Route::get('/admin/update-course-status/{id}', [AdminCourseController::class, 'updateStatus'])->name('admin.update-course-status');
+    Route::get('/admin/offer-course', [AdminCourseController::class, 'offerCourse'])->name('admin.offer-course');
+    Route::post('/admin/offer-update', [AdminCourseController::class, 'offerUpdate'])->name('admin.offer-update');
 
 });

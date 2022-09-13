@@ -23,4 +23,16 @@ class AdminCourseController extends Controller
         $this->message = Course::updateCourseStatus($id);
         return redirect('/admin/manage-course')->with('message', $this->message);
     }
+    public function offerCourse()
+    {
+        $this->course = Course::where('status', 1)->orderBy('id', 'desc')->take(50)->get();
+        return view('admin.course.offer', ['course'=> $this->course]);
+    }
+    public function offerUpdate(Request $request)
+    {
+
+        Course::offerCourseUpdate($request);
+        return redirect('/admin/offer-course')->with('message', 'asdasd');
+
+    }
 }

@@ -60,4 +60,5 @@ class Teacher extends Model
         }
         self::$teacher->delete();
     }
+
 }

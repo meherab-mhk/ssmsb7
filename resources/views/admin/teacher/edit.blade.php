@@ -1,6 +1,10 @@
 @extends('admin.home.master')
 
 @section('title')
+    Admin| Edit Teacher
+@endsection
+
+@section('title')
     Edit Teacher
 @endsection
 
