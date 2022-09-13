@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $course;
     public function index()
     {
-        return view('website.home.index');
+        $this->course = Course::where('status', 1)->orderBy('id', 'desc')->take(3)->get();
+        return view('website.home.index', ['course'=>$this->course]);
     }
     public function about()
     {

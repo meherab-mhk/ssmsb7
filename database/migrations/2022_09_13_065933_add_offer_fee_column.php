@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('teachers', function (Blueprint $table) {
-            $table->tinyInteger('status')->default(0);
+        Schema::table('courses', function (Blueprint $table) {
+            $table->integer('offer_fee')->default(0);
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('teachers', function (Blueprint $table) {
+        Schema::table('courses', function (Blueprint $table) {
             //
         });
     }

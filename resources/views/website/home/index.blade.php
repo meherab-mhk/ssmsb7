@@ -102,45 +102,21 @@
         </div>
         <div class="container py-5">
             <div class="row">
+                @foreach($course as $data)
                 <div class="col-md-4">
                     <div class="card shadow">
-                        <img src="{{asset('/')}}website/img/service1.jpg" alt="" class="card-img-top" style=" height: 200px">
+                        <img src="{{asset($data->image)}}" alt="" class="card-img-top" style=" height: 200px">
                         <div class="card-body">
-                            <h3>App Development</h3>
-                            <h5>Meherab Hossain</h5>
-                            <p>TK. 12000</p>
-                            <p>Starting Date: 12.08.2022</p>
+                            <h3>{{$data->title}}</h3>
+                            <h5>{{$data->teacher->name}}</h5>
+                            <p>tk{{$data->fee}}</p>
+                            <p>{{$data->starting_date}}</p>
                             <hr>
-                            <a href="" class="btn btn-outline-secondary">Details</a>
+                            <a href="{{route('')}}" class="btn btn-outline-secondary">Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow">
-                        <img src="{{asset('/')}}website/img/service2.jpg" alt="" class="card-img-top" style=" height: 200px">
-                        <div class="card-body">
-                            <h3>PHP with Laravel</h3>
-                            <h5>Meherab Hossain</h5>
-                            <p>TK. 12000</p>
-                            <p>Starting Date: 12.08.2022</p>
-                            <hr>
-                            <a href="" class="btn btn-outline-secondary">Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow">
-                        <img src="{{asset('/')}}website/img/service3.jpg" alt="" class="card-img-top" style=" height: 200px">
-                        <div class="card-body">
-                            <h3>Responsive Web Design</h3>
-                            <h5>Meherab Hossain</h5>
-                            <p>TK. 12000</p>
-                            <p>Starting Date: 12.08.2022</p>
-                            <hr>
-                            <a href="" class="btn btn-outline-secondary">Details</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
