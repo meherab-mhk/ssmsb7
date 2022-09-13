@@ -90,23 +90,24 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
-    public static function offerCourseUpdate($request)
+    public static function getBannerImage($request)
     {
-
-        
-        self::$course = Course::find($request->id);
         self::$image = $request->file('banner_image');
         self::$extension = self::$image->getClientOriginalExtension();
         self::$imageName = 'ssmsb7_'.time().'.'.self::$extension;
         self::$directory = 'website/img/course_offer/';
         self::$image->move(self::$directory, self::$imageName);
-        self::$imageUrl = self::$directory.self::$imageName;
+        return self::$directory.self::$imageName;
 
+    }
+    public static function offerCourseUpdate($request)
+    {
+
+        self::$course = $request->course;
+        self::$course = Course::find($request->id);
         self::$course->offer_fee = $request->offer_fee;
-        self::$course->banner_image = self::$imageUrl;
+        self::$course->banner_image = self::getBannerImage($request);
         self::$course->save();
-
-
     }
 
 }
