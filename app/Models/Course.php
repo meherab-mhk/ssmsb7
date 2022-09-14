@@ -11,18 +11,17 @@ use Session;
 class Course extends Model
 {
     use HasFactory;
-    
-    
+
+
     private static $course, $image, $imageName, $directory, $extension, $imageUrl;
     private static $message, $publishCourse, $id;
-    public static function getImageUrl($request)
+    public static function getImageUrl($request, $directory)
     {
         self::$image = $request->file('image');
         self::$extension = self::$image->getCLientOriginalExtension();
         self::$imageName = 'ssmsb7_'.time().'.'.self::$extension;
-        self::$directory = 'website/img/course/';
-        self::$image->move(self::$directory, self::$imageName);
-        return self::$directory.self::$imageName;
+        self::$image->move($directory, self::$imageName);
+        return $directory.self::$imageName;
     }
 
     public static function addCourse($request)
@@ -34,7 +33,7 @@ class Course extends Model
         self::$course->starting_date = $request->starting_date;
         self::$course->duration = $request->duration;
         self::$course->description = $request->description;
-        self::$course->image = self::getImageUrl($request);
+        self::$course->image = self::getImageUrl($request, 'website/img/course/');
         self::$course->save();
     }
     public static function updateCourse($request, $id)
@@ -46,7 +45,7 @@ class Course extends Model
             {
                 unlink(self::$course->image);
             }
-            self::$imageUrl = self::getImageUrl($request);
+            self::$imageUrl = self::getImageUrl($request, 'website/img/course/');
         }
         else
         {
@@ -58,7 +57,7 @@ class Course extends Model
         self::$course->starting_date = $request->starting_date;
         self::$course->duration = $request->duration;
         self::$course->description = $request->description;
-        self::$course->image = self::getImageUrl($request);
+        self::$course->image = self::getImageUrl($request, 'website/img/teacher/');
         self::$course->save();
     }
     public static function deleteCourse($id)
@@ -90,23 +89,31 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
-    public static function getBannerImage($request)
-    {
-        self::$image = $request->file('banner_image');
-        self::$extension = self::$image->getClientOriginalExtension();
-        self::$imageName = 'ssmsb7_'.time().'.'.self::$extension;
-        self::$directory = 'website/img/course_offer/';
-        self::$image->move(self::$directory, self::$imageName);
-        return self::$directory.self::$imageName;
 
-    }
     public static function offerCourseUpdate($request)
     {
-
-        self::$course = $request->course;
-        self::$course = Course::find($request->id);
+        self::$course = Course::find($request->course_id);
         self::$course->offer_fee = $request->offer_fee;
-        self::$course->banner_image = self::getBannerImage($request);
+        self::$course->banner_image = self::getImageUrl($request, 'website/img/course_offer/');
+        self::$course->save();
+    }
+    public static function updateCourseOffer($request)
+    {
+        self::$course = Course::find($request->course_id);
+        if($request->file('image'))
+        {
+            if(file_exists(self::$course->image))
+            {
+                unlink(self::$course->image);
+            }
+            self::$imageUrl = self::getImageUrl($request, 'website/img/course_offer/');
+        }
+        else
+        {
+            self::$imageUrl = self::$course->image;
+        }
+        self::$course->offer_fee = $request->offer_fee;
+        self::$course->banner_image = self::$imageUrl;
         self::$course->save();
     }
 

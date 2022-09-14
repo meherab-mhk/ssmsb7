@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminCourseController extends Controller
 {
-    private $course, $message;
+    private $course, $message, $offerCourses;
     public function manageCourse()
     {
         $this->course = Course::orderBy('id', 'desc')->take(50)->get();
@@ -25,14 +25,32 @@ class AdminCourseController extends Controller
     }
     public function offerCourse()
     {
-        $this->course = Course::where('status', 1)->orderBy('id', 'desc')->take(50)->get();
-        return view('admin.course.offer', ['course'=> $this->course]);
+        $this->course = Course::where('status', 1)->orderBy('id', 'desc')->get();
+        $this->offerCourses = Course::where('status', 1)->where('offer_fee','>', 0)->orderBy('id', 'desc')->get();
+        return view('admin.course.offer', [
+            'course' => $this->course,
+            'offerCourse'=> $this->offerCourses,
+        ]);
     }
     public function offerUpdate(Request $request)
     {
 
         Course::offerCourseUpdate($request);
-        return redirect('/admin/offer-course')->with('message', 'asdasd');
+        return redirect('/admin/offer-course')->with('message', 'Offer Course Create');
 
+    }
+    public function offerEdit($id)
+    {
+        $this->course = Course::where('status', 1)->orderBy('id', 'desc')->get();
+        $this->offerCourses = Course::find($id);
+        return view('admin.course.edit-offer', [
+            'course' => $this->course,
+            'offerCourse'=> $this->offerCourses,
+        ]);
+    }
+    public function updateCourseOffer(Request $request)
+    {
+        Course::updateCourseOffer($request);
+        return redirect('/admin/offer-course')->with('message', 'Offer Course Updated');
     }
 }
