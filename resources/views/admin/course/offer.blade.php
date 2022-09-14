@@ -54,7 +54,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">All Course info</h4>
+                    <h4 class="card-title">Offer Course info</h4>
                     <div class="table-responsive">
                         <table class="table table-striped mb-0">
 
