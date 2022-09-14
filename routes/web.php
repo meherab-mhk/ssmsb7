@@ -63,5 +63,6 @@ Route::middleware([
     Route::post('/admin/offer-update', [AdminCourseController::class, 'offerUpdate'])->name('admin.offer-update');
     Route::get('/admin/edit-course-offer/{id}', [AdminCourseController::class, 'offerEdit'])->name('admin.edit-course-offer');
     Route::post('/admin/update-course-offer/{id}', [AdminCourseController::class, 'updateCourseOffer'])->name('admin.edit-offer-update');
+    Route::get('/admin/delete-course-offer/{id}', [AdminCourseController::class, 'deleteCourseOffer'])->name('admin.delete-course-offer');
 
 });

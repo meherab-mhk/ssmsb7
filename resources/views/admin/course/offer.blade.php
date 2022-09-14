@@ -80,6 +80,9 @@
                                         <a href="{{route('admin.edit-course-offer', ['id'=>$data->id])}}" class="btn btn-sm btn-primary" title="Edit offer course">
                                             <i class="fa fa-edit"></i>
                                         </a>
+                                        <a href="{{route('admin.delete-course-offer', ['id'=>$data->id])}}" class="btn btn-sm btn-danger" title="Cancel offer course">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

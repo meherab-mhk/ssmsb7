@@ -53,4 +53,10 @@ class AdminCourseController extends Controller
         Course::updateCourseOffer($request);
         return redirect('/admin/offer-course')->with('message', 'Offer Course Updated');
     }
+
+    public function deleteCourseOffer($id)
+    {
+        Course::deleteCourseOffer($id);
+        return redirect('/admin/offer-course')->with('message', 'Course Offer Canceled');
+    }
 }

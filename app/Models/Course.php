@@ -117,4 +117,18 @@ class Course extends Model
         self::$course->save();
     }
 
+    public static function deleteCourseOffer($id)
+    {
+        self::$course = Course::find($id);
+        if(self::$course->status == 1)
+        {
+            self::$course->offer_fee = 0;
+            if(file_exists(self::$course->banner_image))
+            {
+                unlink(self::$course->banner_image);
+            }
+            self::$course->banner_image = null;
+        }
+        self::$course->save();
+    }
 }
