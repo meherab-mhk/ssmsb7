@@ -35,7 +35,7 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-password-input" class="col-sm-3 col-form-label">Course Banner</label>
                             <div class="col-sm-9">
-                                <input type="file" name="image" class="form-control" >
+                                <input type="file" name="image" class="form-control-file" >
                                 <img src="{{asset($offerCourse->banner_image)}}" alt="" width="80" height="80">
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-9">
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-md">Save</button>
+                                    <button type="submit" class="btn btn-primary w-md">Update</button>
                                 </div>
                             </div>
                         </div>

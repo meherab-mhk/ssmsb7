@@ -27,15 +27,15 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label for="horizontal-password-input" class="col-sm-3 col-form-label">Course Banner</label>
-                            <div class="col-sm-9">
-                                <input type="file" name="image" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group row mb-4">
                             <label for="horizontal-password-input" class="col-sm-3 col-form-label">Offer Fee</label>
                             <div class="col-sm-9">
                                 <input type="number" name="offer_fee" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-password-input" class="col-sm-3 col-form-label">Course Banner</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="image" class="form-control-file">
                             </div>
                         </div>
                         <div class="form-group row justify-content-end">
@@ -77,7 +77,7 @@
                                     <td>{{$data->starting_date}}</td>
                                     <td>{{$data->offer_fee}}</td>
                                     <td>
-                                        <a href="{{route('admin.edit-course-offer', ['id'=>$data->id])}}" class="btn btn-sm btn-primary" title="View Course Detail">
+                                        <a href="{{route('admin.edit-course-offer', ['id'=>$data->id])}}" class="btn btn-sm btn-primary" title="Edit offer course">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
