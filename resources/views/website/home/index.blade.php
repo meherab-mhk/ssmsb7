@@ -18,7 +18,7 @@
                 <div class="carousel-caption d-none d-md-block my-caption">
                     <h5>{{$data->title}}</h5>
                     <p>{{$data->description}}</p>
-                    <a href="" type="button" class="btn btn-success">Read More</a>
+                    <a href="{{route('course-details',['id'=>$data->id])}}" type="button" class="btn btn-success">Read More</a>
                 </div>
             </div>
             @endforeach
@@ -99,7 +99,7 @@
                             <p>tk{{$data->fee}}</p>
                             <p>{{$data->starting_date}}</p>
                             <hr>
-                            <a href="" class="btn btn-outline-secondary">Details</a>
+                            <a href="{{route('course-details',['id'=>$data->id])}}" class="btn btn-outline-secondary">Details</a>
                         </div>
                     </div>
                 </div>

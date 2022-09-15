@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-    Course Details
+ {{$course->title}}
 @endsection
 
 @section('body')
@@ -11,19 +11,23 @@
                 <div class="col-md-6 mb-5">
                     <div class="card shadow h-100 rounded-0">
                         <div class="card-body">
-                            <img src="{{asset('/')}}website/img/slide.jpg" alt="" class="w-100" style="height: 300px;">
+                            <img src="{{asset($course->image)}}" alt="" class="w-100" style="height: 300px;">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-5">
                     <div class="card shadow h-100 rounded-0">
                         <div class="card-body">
-                            <h3>Course title</h3>
-                            <h4>Trainer name</h4>
-                            <p>tk 12000</p>
-                            <p>starting date</p>
-                            <p>venue</p>
-                            <a href="" class="btn btn-outline-success">Enroll Now</a>
+                            <h3>{{$course->title}}</h3>
+                            <h4>{{$course->teacher->name}}</h4>
+                            <p>{{$course->staring_date}}</p>
+                            @if($course->offer_fee > 0)
+                            <p>Course Regular Fee: TK. {{$course->fee}}</p>
+                            <p>Course Offer Fee: TK. {{$course->offer_fee}}</p>
+                            @else
+                                <p>Course Fee: TK. {{$course->fee}}</p>
+                            @endif
+                            <a href="{{route('enroll-now',['id'=>$course->id])}}" class="btn btn-outline-success">Enroll Now</a>
                         </div>
                     </div>
                 </div>
@@ -33,11 +37,7 @@
                             <h3>Course Description</h3>
                         </div>
                         <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aliquam aperiam commodi doloribus ducimus facilis
-                                Ab aperiam aspernatur consequuntur deserunt dicta eius eum
-                                incidunt, inventore laboriosam, magni optio repellendus unde!
-                            </p>
+                            <p>{{$course->description}}</p>
                         </div>
                     </div>
                 </div>

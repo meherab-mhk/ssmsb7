@@ -33,8 +33,10 @@ class HomeController extends Controller
     {
         return view('website.auth.index');
     }
-    public function details()
+    public function details($id)
     {
-        return view('website.courses.course-details');
+        $this->course = Course::find($id);
+        return view('website.courses.course-details',['course' => $this->course]);
     }
+
 }

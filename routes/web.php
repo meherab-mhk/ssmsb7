@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminCourseController;
+use App\Http\Controllers\EnrollController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,10 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/all-courses', [HomeController::class, 'courses'])->name('courses');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 Route::get('/login-register', [HomeController::class, 'auth'])->name('login-register');
-Route::get('/course-details', [HomeController::class, 'details'])->name('course-details');
+Route::get('/course-details/{id}', [HomeController::class, 'details'])->name('course-details');
+
+Route::get('/enroll-now/{id}', [EnrollController::class, 'enroll'])->name('enroll-now');
+Route::post('/enroll-new/{id}', [EnrollController::class, 'newEnroll'])->name('new-enroll');
 
 Route::get('/teacher/login', [TeacherAuthController::class, 'login'])->name('teacher.login');
 Route::post('/teacher/login', [TeacherAuthController::class, 'loginCheck'])->name('teacher.login');
