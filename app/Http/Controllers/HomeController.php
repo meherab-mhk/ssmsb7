@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $course;
+    private $course, $offerCourse;
     public function index()
     {
         $this->course = Course::where('status', 1)->orderBy('id', 'desc')->take(3)->get();
-        return view('website.home.index', ['course'=>$this->course]);
+        $this->offerCourse = Course::where('offer_fee', '>', 0)->orderBy('id','desc')->get();
+        return view('website.home.index', [
+            'course'=>$this->course,
+            'offerCourse'=> $this->offerCourse,
+            ]);
     }
     public function about()
     {

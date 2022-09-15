@@ -7,36 +7,23 @@
 @section('body')
     <div id="slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1800">
         <ol class="carousel-indicators">
-            <li data-bs-target="#slider" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#slider" data-bs-slide-to="1" class=""></li>
-            <li data-bs-target="#slider" data-bs-slide-to="2" class=""></li>
+            @foreach($offerCourse as $key => $data)
+            <li data-bs-target="#slider" data-bs-slide-to="{{$key}}" class="{{$key == 0 ? 'active' : ''}}"></li>
+            @endforeach
         </ol>
         <div class="carousel-inner slider-img">
-            <div class="carousel-item active">
-                <img src="{{asset('/')}}website/img/slide1.jpg" alt="" class="w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+            @foreach($offerCourse as $key1 => $data)
+            <div class="carousel-item {{$key1 == 0 ? 'active' : ''}}">
+                <img src="{{asset($data->banner_image)}}" alt="" class="w-100">
+                <div class="carousel-caption d-none d-md-block my-caption">
+                    <h5>{{$data->title}}</h5>
+                    <p>{{$data->description}}</p>
                     <a href="" type="button" class="btn btn-success">Read More</a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="{{asset('/')}}website/img/slide2.jpg" alt="" class="w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                    <a href="" type="button" class="btn btn-success">Read More</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('/')}}website/img/slide3.jpg" alt="" class="w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                    <a href="" type="button" class="btn btn-success">Read More</a>
-                </div>
-            </div>
+            @endforeach
         </div>
+
     </div>
 
     <section class="">

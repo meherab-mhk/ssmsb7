@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="{{asset('/')}}website/css/all.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/helper.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/style.css">
-
+    <style>
+        .my-caption{
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

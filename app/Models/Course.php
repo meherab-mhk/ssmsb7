@@ -102,15 +102,15 @@ class Course extends Model
         self::$course = Course::find($request->course_id);
         if($request->file('image'))
         {
-            if(file_exists(self::$course->image))
+            if(file_exists(self::$course->banner_image))
             {
-                unlink(self::$course->image);
+                unlink(self::$course->banner_image);
             }
             self::$imageUrl = self::getImageUrl($request, 'website/img/course_offer/');
         }
         else
         {
-            self::$imageUrl = self::$course->image;
+            self::$imageUrl = self::$course->banner_image;
         }
         self::$course->offer_fee = $request->offer_fee;
         self::$course->banner_image = self::$imageUrl;

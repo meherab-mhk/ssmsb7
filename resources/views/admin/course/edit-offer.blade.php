@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Offer Course</h4>
                     <h3 class="text-center text-success">{{Session::get('message')}}</h3>
-                    <form action="{{route('admin.edit-offer-update',['id'=>$offerCourse->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('admin.edit-offer-update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
                             <label class="col-md-3 col-form-label">Select Course</label>
