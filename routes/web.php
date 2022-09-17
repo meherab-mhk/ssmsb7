@@ -9,6 +9,8 @@ use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\StudentDashboardController;
+use App\Http\Controllers\StudentAuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +45,12 @@ Route::get('/course/edit/{id}', [CourseController::class, 'edit'])->name('course
 Route::get('/course/detail/{id}', [CourseController::class, 'detail'])->name('course.detail');
 Route::post('/course/update/{id}', [CourseController::class, 'update'])->name('course.update');
 Route::get('/course/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
+
+
+Route::get('/student/dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
+Route::get('/course/logout', [StudentAuthController::class, 'logout'])->name('student-logout');
+
+
 
 
 

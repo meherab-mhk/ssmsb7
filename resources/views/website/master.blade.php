@@ -37,9 +37,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('login-register')}}">Login/Register</a>
-                </li>
+                @if(Session::get('student_id'))
+                    <li class="dropdown">
+                        <a href="" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">{{Session::get('student_name')}}</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{route('student-dashboard')}}" class="dropdown-item">Dashboard</a></li>
+                            <li><a href="{{route('student-logout')}}" class="dropdown-item">Logout</a></li>
+                        </ul>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login-register')}}">Login/Register</a>
+                    </li>
+                @endif
+
             </ul>
         </div>
     </div>
