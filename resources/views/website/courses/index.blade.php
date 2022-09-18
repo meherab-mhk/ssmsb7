@@ -23,7 +23,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         <p>TK. 12000</p>
                         <p>Starting Date: 12.08.2022</p>
                         <hr>
-                        <a href="{{route('course-details')}}" class="btn btn-outline-secondary">Details</a>
+                        <a href="" class="btn btn-outline-secondary">Details</a>
                     </div>
                 </div>
             </div>

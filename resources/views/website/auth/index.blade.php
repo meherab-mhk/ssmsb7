@@ -20,7 +20,7 @@
                         <div class="card-body  bg-secondary text-white">
                             <h1>Login Form</h1>
                             <hr>
-                            <form action="{{route('login')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('student-login')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label class="col-md-3">Email Address</label>

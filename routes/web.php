@@ -49,6 +49,7 @@ Route::get('/course/delete/{id}', [CourseController::class, 'delete'])->name('co
 
 Route::get('/student/dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
 Route::get('/course/logout', [StudentAuthController::class, 'logout'])->name('student-logout');
+Route::post('/student/login', [StudentAuthController::class,'login'])->name('student-login');
 
 
 

@@ -8,7 +8,7 @@ class StudentDashboardController extends Controller
 {
     public function index()
     {
-        return view('student.home.index');
+        return view('website.student.home.student-dashboard');
     }
 
 }
